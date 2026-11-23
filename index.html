@@ -1,423 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080d1b">
-<meta name="description" content="Ubaid Ur Rehman - AI Trainer, Researcher and Digital Project Developer.">
-<title>Ubaid Ur Rehman | AI Researcher</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ubaid ur Rehman – AI Trainer & Prompt Engineer specializing in AI response evaluation, data annotation and prompt engineering.">
+<title>Ubaid ur Rehman – AI Trainer & Prompt Engineer</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-:root {
-  --bg:#080d1b;
-  --panel:#101a2d;
-  --blue:#4da3ff;
-  --cyan:#58e1ee;
-  --text:#f2f6ff;
-  --muted:#9aaac2;
-  --border:rgba(255,255,255,.09);
-}
-* {margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-body {
-  font-family:Inter,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.7;
-}
-a {color:inherit;text-decoration:none}
-.container {width:min(1100px,90%);margin:auto}
-nav {
-  position:sticky;top:0;z-index:100;
-  background:rgba(8,13,27,.92);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid var(--border);
-}
-.nav-inner {
-  display:flex;justify-content:space-between;
-  align-items:center;min-height:72px;
-}
-.logo {font-size:22px;font-weight:800}
-.logo span {color:var(--blue)}
-.nav-links {display:flex;gap:23px;align-items:center}
-.nav-links a {font-size:13px;color:var(--muted)}
-.nav-links a:hover {color:var(--cyan)}
-.menu {display:none;background:none;color:white;border:0;font-size:27px}
-.hero {
-  min-height:650px;display:flex;align-items:center;
-  background:
-  radial-gradient(ellipse at 85% 30%,rgba(40,120,255,.17),transparent 40%),
-  radial-gradient(ellipse at 10% 90%,rgba(30,210,220,.09),transparent 35%);
-}
-.hero-grid {
-  display:grid;grid-template-columns:1.5fr 1fr;
-  align-items:center;gap:55px;padding:85px 0;
-}
-.tag {
-  display:inline-block;color:var(--cyan);
-  background:rgba(88,225,238,.09);
-  border:1px solid rgba(88,225,238,.2);
-  border-radius:30px;padding:7px 15px;font-size:12px;
-  margin-bottom:24px;
-}
-.hero h1 {font-size:clamp(40px,6vw,67px);line-height:1.13;letter-spacing:-2px}
-.hero h1 span {
-  background:linear-gradient(90deg,var(--blue),var(--cyan));
-  -webkit-background-clip:text;color:transparent;
-}
-.hero p {color:var(--muted);margin:22px 0;max-width:580px;font-size:15px}
-.buttons {display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}
-.btn {
-  padding:12px 22px;border-radius:8px;
-  font-size:13px;font-weight:700;display:inline-block;
-  transition:.25s;
-}
-.primary {background:linear-gradient(90deg,#2779ed,#37c9dc);color:#06101d}
-.secondary {border:1px solid var(--border);color:var(--text)}
-.btn:hover {transform:translateY(-3px)}
-.profile-wrap {display:flex;justify-content:center}
-.profile {
-  width:280px;height:280px;border-radius:50%;
-  padding:8px;border:2px solid var(--blue);
-  box-shadow:0 0 60px rgba(65,155,255,.2);
-  background:var(--panel);
-}
-.profile img {width:100%;height:100%;object-fit:cover;border-radius:50%}
-section {padding:90px 0;scroll-margin-top:70px}
-.section-heading {margin-bottom:40px}
-.section-heading small {color:var(--cyan);text-transform:uppercase;letter-spacing:3px;font-size:11px}
-.section-heading h2 {font-size:34px;margin-top:8px}
-.section-heading p {color:var(--muted);font-size:14px;margin-top:8px}
-.about-grid {display:grid;grid-template-columns:1.2fr .8fr;gap:30px}
-.panel {
-  background:var(--panel);border:1px solid var(--border);
-  border-radius:15px;padding:27px;
-}
-.panel p {color:var(--muted);font-size:14px}
-.info-grid {display:grid;grid-template-columns:1fr 1fr;gap:13px}
-.info {background:#142239;border-radius:10px;padding:15px}
-.info small {color:var(--muted);font-size:11px}
-.info strong {display:block;font-size:13px;margin-top:5px}
-.skills-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.skill-card,.project-card,.experience-card {
-  background:var(--panel);border:1px solid var(--border);
-  padding:23px;border-radius:13px;transition:.25s;
-}
-.skill-card:hover,.project-card:hover,.experience-card:hover {
-  transform:translateY(-5px);border-color:var(--blue);
-}
-.skill-card h3 {font-size:16px;margin-bottom:15px}
-.skill-list {display:flex;flex-wrap:wrap;gap:9px}
-.skill-list span {
-  background:#192943;color:#b9d9ff;
-  padding:7px 11px;border-radius:6px;font-size:11px;
-}
-.projects-grid {display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.project-card {display:flex;flex-direction:column;min-height:230px}
-.project-card .number {color:var(--cyan);font-size:12px}
-.project-card h3 {font-size:20px;margin:12px 0}
-.project-card p {color:var(--muted);font-size:13px;flex:1}
-.project-link {color:var(--cyan);font-size:13px;margin-top:20px;font-weight:600}
-.timeline {border-left:2px solid #285b8f;margin-left:8px;padding-left:25px}
-.experience-card {margin-bottom:20px;position:relative}
-.experience-card:before {
-  content:"";position:absolute;left:-34px;top:27px;
-  width:14px;height:14px;background:var(--cyan);border-radius:50%;
-}
-.experience-card h3 {font-size:17px}
-.experience-card small {color:var(--cyan)}
-.experience-card p {color:var(--muted);font-size:13px;margin-top:9px}
-.cert-box {
-  background:linear-gradient(120deg,#112b49,#10243a);
-  border:1px solid #24547b;padding:30px;border-radius:15px;
-}
-.cert-box h3 {font-size:21px;margin:10px 0}
-.cert-box p {color:var(--muted);font-size:14px}
-.contact-grid {display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.contact-card {
-  padding:20px;background:var(--panel);
-  border:1px solid var(--border);border-radius:12px;
-}
-.contact-card small {color:var(--cyan)}
-.contact-card p {font-size:13px;overflow-wrap:anywhere;margin-top:5px}
-footer {
-  padding:30px 0;text-align:center;
-  border-top:1px solid var(--border);
-  color:var(--muted);font-size:12px;
-}
-footer span {color:var(--cyan)}
-@media(max-width:750px) {
-  .menu {display:block}
-  .nav-links {
-    display:none;position:absolute;top:72px;left:0;width:100%;
-    background:#101a2d;padding:20px;
-    flex-direction:column;align-items:flex-start;
-  }
-  .nav-links.show {display:flex}
-  .hero-grid {grid-template-columns:1fr;text-align:center;gap:35px}
-  .hero-grid .buttons {justify-content:center}
-  .hero p {margin-left:auto;margin-right:auto}
-  .profile {width:210px;height:210px}
-  .about-grid,.skills-grid,.projects-grid,.contact-grid {grid-template-columns:1fr}
-  section {padding:65px 0}
-  .section-heading h2 {font-size:28px}
-  .info-grid {grid-template-columns:1fr 1fr}
-}
+:root{--bg:#0b1220;--panel:#111a2c;--line:#1f2c45;--ink:#e6edf7;--muted:#8fa0b8;--accent:#3ddc97;--blue:#5aa9ff;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace}
+a{color:var(--blue)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:10;background:rgba(11,18,32,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:20px;padding-top:13px;padding-bottom:13px;overflow-x:auto;white-space:nowrap;font-size:14px}
+nav .logo{font-weight:700;color:var(--accent);text-decoration:none;font-family:"JetBrains Mono",monospace}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--ink)}
+.hero{padding:64px 0 48px}
+.kicker{font:500 13px "JetBrains Mono",monospace;color:var(--accent);margin:0 0 14px}
+h1{font-size:clamp(36px,8vw,60px);line-height:1.08;margin:0 0 12px;font-weight:700;letter-spacing:-.02em}
+.sub{font-size:19px;color:var(--muted);margin:0 0 22px;max-width:60ch}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+.btn{padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;border:1.5px solid var(--accent);color:var(--accent)}
+.btn.p{background:var(--accent);color:#06210f}
+.term{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;font:400 14px/1.8 "JetBrains Mono",monospace;color:var(--muted);overflow-x:auto}
+.term .c{color:var(--accent)}.term b{color:var(--ink);font-weight:500}
+section{padding:44px 0;border-top:1px solid var(--line)}
+.num{font:500 13px "JetBrains Mono",monospace;color:var(--accent);margin:0 0 6px}
+h2{font-size:30px;margin:0 0 20px;font-weight:700}
+h3{font-size:18px;margin:0;font-weight:600}
+.about{display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:start}
+.about img{width:200px;height:200px;object-fit:cover;border-radius:12px;border:2px solid var(--line);display:block}
+.about p{margin:0 0 14px;max-width:66ch}
+.chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{border:1px solid var(--line);background:var(--panel);padding:5px 12px;border-radius:6px;font:400 13px "JetBrains Mono",monospace}
+.grp{margin-bottom:20px}
+.grp h3{font:500 14px "JetBrains Mono",monospace;color:var(--muted);margin-bottom:10px}
+.job{border-left:2px solid var(--line);padding:0 0 26px 20px;position:relative}
+.job:before{content:"";position:absolute;left:-6px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.when{font:500 13px "JetBrains Mono",monospace;color:var(--accent)}
+.job ul{margin:8px 0 0;padding-left:18px;color:var(--muted)}
+.job li{margin-bottom:3px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.card p{margin:0;color:var(--muted);font-size:15px;flex:1}
+.card a{font-weight:600;font-size:15px}
+.contact a,.contact div{display:block;margin-bottom:8px;word-break:break-word}
+.contact span{display:inline-block;width:90px;color:var(--muted);font:400 13px "JetBrains Mono",monospace}
+footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:640px){.about{grid-template-columns:1fr}.about img{width:150px;height:150px}.hero{padding-top:44px}}
 </style>
 </head>
-
 <body>
+<nav><div class="wrap"><a class="logo" href="#top">U.REHMAN</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#certifications">Certifications</a><a href="#education">Education</a><a href="#contact">Contact</a></div></nav>
 
-<nav>
-<div class="container nav-inner">
-  <a class="logo" href="#home">UBAID<span>.</span></a>
-  <button class="menu" onclick="toggleMenu()" aria-label="Toggle navigation">☰</button>
-  <div class="nav-links" id="navLinks">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
+<main class="wrap" id="top">
+<header class="hero">
+  <p class="kicker">Sargodha, Pakistan · Remote</p>
+  <h1>Ubaid ur Rehman</h1>
+  <p class="sub">AI Trainer & Prompt Engineer: evaluating AI answers, catching errors and making model responses more accurate.</p>
+  <div class="btns"><a class="btn p" href="#projects">View projects</a><a class="btn" href="#contact">Contact me</a></div>
+  <div class="term" aria-label="Skills summary">
+    <div><span class="c">$</span> run --suite=career</div>
+    <div><span class="c">✓</span> prompt_engineering <b>passed</b></div>
+    <div><span class="c">✓</span> ai_response_evaluation <b>passed</b></div>
+    <div><span class="c">✓</span> error_identification <b>passed</b></div>
+    <div><span class="c">✓</span> data_entry_and_records <b>passed</b></div>
   </div>
-</div>
-</nav>
-
-<header class="hero" id="home">
-<div class="container hero-grid">
-  <div>
-    <span class="tag">AI TRAINER · RESEARCHER · PROJECT DEVELOPER</span>
-    <h1>Hi, I'm <span>Ubaid Ur Rehman</span></h1>
-    <p>
-      I explore Artificial Intelligence, research, data analysis
-      and digital innovation. I enjoy solving problems, evaluating
-      information and developing practical AI-powered applications.
-    </p>
-    <div class="buttons">
-      <a href="#projects" class="btn primary">Explore My Projects ↗</a>
-      <a href="#contact" class="btn secondary">Contact Me</a>
-    </div>
-  </div>
-  <div class="profile-wrap">
-    <div class="profile">
-      <img src="IMG-20261010-WA0006.jpg" alt="Ubaid Ur Rehman">
-    </div>
-  </div>
-</div>
 </header>
 
 <section id="about">
-<div class="container">
-  <div class="section-heading">
-    <small>Discover My Journey</small>
-    <h2>About Me</h2>
-    <p>A little introduction about my professional background.</p>
-  </div>
-  <div class="about-grid">
-    <div class="panel">
-      <h3 style="margin-bottom:15px">Who I Am</h3>
-      <p>
-        I am Ubaid Ur Rehman, an AI-focused professional with a
-        Bachelor of Arts degree. My interests include AI training,
-        prompt engineering, AI response evaluation, research,
-        data analysis and problem-solving.
-        <br><br>
-        I also explore digital product development and build
-        web-based applications using modern AI tools and platforms.
-        I value critical thinking, accuracy, continuous learning
-        and practical innovation.
-      </p>
-    </div>
-    <div class="info-grid">
-      <div class="info"><small>Education</small><strong>Bachelor of Arts</strong></div>
-      <div class="info"><small>Specialization</small><strong>AI & Research</strong></div>
-      <div class="info"><small>Location</small><strong>Pakistan</strong></div>
-      <div class="info"><small>Focus</small><strong>Digital Innovation</strong></div>
+  <p class="num">01 — About</p>
+  <h2>About</h2>
+  <div class="about">
+    <img src="IMG-20261010-WA0006.jpg" alt="Ubaid ur Rehman" width="200" height="200">
+    <div>
+      <p>I’m a detail-oriented, analytical professional with experience in problem-solving, project management, field supervision and decision-making. I evaluate information, identify errors and compare different solutions.</p>
+      <p>My focus is AI training, question-answer evaluation, data annotation and improving AI models. I work well independently and have built several AI-powered apps of my own.</p>
+      <ul class="chips"><li>Prompt Engineering</li><li>AI Response Evaluation</li><li>Data Annotation</li><li>Quality Checking</li></ul>
     </div>
   </div>
-</div>
 </section>
 
 <section id="skills">
-<div class="container">
-  <div class="section-heading">
-    <small>My Capabilities</small>
-    <h2>Skills & Expertise</h2>
-    <p>Skills developed through professional experience and projects.</p>
-  </div>
-  <div class="skills-grid">
-    <div class="skill-card">
-      <h3>Artificial Intelligence</h3>
-      <div class="skill-list">
-        <span>AI Tools</span><span>AI Training</span>
-        <span>Prompt Engineering</span><span>Response Evaluation</span>
-        <span>Information Verification</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <h3>Research & Analysis</h3>
-      <div class="skill-list">
-        <span>AI Research</span><span>Data Analysis</span>
-        <span>Critical Thinking</span><span>Logical Reasoning</span>
-        <span>Problem Solving</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <h3>Professional Skills</h3>
-      <div class="skill-list">
-        <span>Leadership</span><span>Communication</span>
-        <span>Teamwork</span><span>Quality Checking</span>
-        <span>Data Management</span><span>Microsoft Office</span>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-<section id="projects">
-<div class="container">
-  <div class="section-heading">
-    <small>What I've Built</small>
-    <h2>Featured Projects</h2>
-    <p>Digital applications and technology projects.</p>
-  </div>
-  <div class="projects-grid">
-    <div class="project-card">
-      <span class="number">01 / WEB PROJECT</span>
-      <h3>UA Veylora</h3>
-      <p>A web-based digital project developed through collaborative technology and innovation.</p>
-      <a class="project-link" href="https://ua-veylora.vercel.app/" target="_blank" rel="noopener">View Live Project ↗</a>
-    </div>
-    <div class="project-card">
-      <span class="number">02 / ARTIFICIAL INTELLIGENCE</span>
-      <h3>AI Tutor Live</h3>
-      <p>An AI-powered tutoring application designed to support interactive learning and educational assistance.</p>
-      <a class="project-link" href="https://ai-tutor-live-mqlzvbuwck36zasjrcbcvb.streamlit.app/" target="_blank" rel="noopener">View Live Project ↗</a>
-    </div>
-    <div class="project-card">
-      <span class="number">03 / GAME DEVELOPMENT</span>
-      <h3>Snake Xenzia Pro</h3>
-      <p>An interactive digital game application inspired by the classic Snake gaming experience.</p>
-      <a class="project-link" href="https://snake-xenzia-pro-cc8m4cphsukdcvuw6hiqkw.streamlit.app/" target="_blank" rel="noopener">View Live Project ↗</a>
-    </div>
-    <div class="project-card">
-      <span class="number">04 / HEALTHCARE AI</span>
-      <h3>MediMind AI</h3>
-      <p>An AI-based healthcare assistance application designed to provide health-related informational support.</p>
-      <a class="project-link" href="https://medimind-n2anzlmyvkzkz7sv7fqjnw.streamlit.app/" target="_blank" rel="noopener">View Live Project ↗</a>
-    </div>
-  </div>
-</div>
+  <p class="num">02 — Skills</p>
+  <h2>Skills</h2>
+  <div class="grp"><h3>AI & digital</h3><ul class="chips"><li>Prompt Engineering</li><li>AI Response Evaluation</li><li>AI Tools Utilization</li><li>Information Verification</li><li>Microsoft Office</li><li>Basic Computer Skills</li></ul></div>
+  <div class="grp"><h3>Analytical & cognitive</h3><ul class="chips"><li>Analytical Skills</li><li>Critical Thinking</li><li>Problem Solving</li><li>Logical Reasoning</li><li>Decision Making</li></ul></div>
+  <div class="grp"><h3>Professional</h3><ul class="chips"><li>Quality Checking</li><li>Error Identification</li><li>Attention to Detail</li><li>Data Entry & Record Management</li><li>Communication</li><li>Leadership & Management</li><li>Teamwork</li><li>Time Management</li></ul></div>
 </section>
 
 <section id="experience">
-<div class="container">
-  <div class="section-heading">
-    <small>Professional Background</small>
-    <h2>Work Experience</h2>
-    <p>My professional journey and responsibilities.</p>
-  </div>
-  <div class="timeline">
-    <div class="experience-card">
-      <small>2021 – 2023</small>
-      <h3>AI Trainer & Prompt Engineer</h3>
-      <p>Worked with AI tools, developed and refined prompts, evaluated AI-generated responses and identified inaccurate or misleading information.</p>
-    </div>
-    <div class="experience-card">
-      <small>2019 – 2020</small>
-      <h3>Clerk – Angels Institute of Science and Technology for Girls</h3>
-      <p>Maintained student records, handled data entry, managed administrative documents and supported institutional operations.</p>
-    </div>
-    <div class="experience-card">
-      <small>2017 – 2018</small>
-      <h3>Restaurant Manager – Butt Karahi</h3>
-      <p>Managed daily operations, staff responsibilities, customer service, inventory and service quality.</p>
-    </div>
-    <div class="experience-card">
-      <small>2015 – 2017</small>
-      <h3>Quality Checker – Service Company</h3>
-      <p>Inspected work quality, identified errors, maintained quality records and reported inconsistencies.</p>
-    </div>
-  </div>
-</div>
+  <p class="num">03 — Experience</p>
+  <h2>Experience</h2>
+  <div class="job"><div class="when">2021 – 2023 · Remote</div><h3>AI Trainer & Prompt Engineer</h3>
+    <ul><li>Worked with AI tools to understand and improve AI-generated responses.</li><li>Wrote and refined prompts for relevant, accurate and meaningful outputs.</li><li>Evaluated answers for relevance, clarity and correctness.</li><li>Identified incorrect, incomplete or misleading information.</li></ul></div>
+  <div class="job"><div class="when">2019 – 2020 · Maini, Pakistan</div><h3>Clerk, Angels Institute of Science and Technology for Girls</h3>
+    <ul><li>Maintained student records, admission files and administrative documents.</li><li>Handled data entry and prepared examination records and attendance sheets.</li><li>Kept institutional records accurate and confidential.</li></ul></div>
+  <div class="job"><div class="when">2017 – 2018 · Maini, Pakistan</div><h3>Restaurant Manager, Butt Karahi</h3>
+    <ul><li>Ran daily operations and supervised staff and schedules.</li><li>Resolved customer complaints and monitored inventory and hygiene standards.</li></ul></div>
+  <div class="job"><div class="when">2015 – 2017 · Maini, Pakistan</div><h3>Quality Checker, Service Company</h3>
+    <ul><li>Inspected work against company standards and identified errors and defects.</li><li>Maintained inspection records and reported quality issues.</li></ul></div>
 </section>
 
-<section id="education">
-<div class="container">
-  <div class="section-heading">
-    <small>Academic Background</small>
-    <h2>Education</h2>
+<section id="projects">
+  <p class="num">04 — Projects</p>
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card"><h3>AI Tutor Live</h3><p>An AI-powered tutoring app for interactive learning and educational help.</p><a href="https://ai-tutor-live-mqlzvbuwck36zasjrcbcvb.streamlit.app/" target="_blank" rel="noopener">Live demo ↗</a></div>
+    <div class="card"><h3>MediMind AI</h3><p>An AI-based healthcare assistance application.</p><a href="https://medimind-n2anzlmyvkzkz7sv7fqjnw.streamlit.app/" target="_blank" rel="noopener">Live demo ↗</a></div>
+    <div class="card"><h3>Snake Xenzia Pro</h3><p>An interactive digital game application.</p><a href="https://snake-xenzia-pro-cc8m4cphsukdcvuw6hiqkw.streamlit.app/" target="_blank" rel="noopener">Live demo ↗</a></div>
+    <div class="card"><h3>UA Veylora</h3><p>A web-based digital project.</p><a href="https://ua-veylora.vercel.app/" target="_blank" rel="noopener">Live demo ↗</a></div>
   </div>
-  <div class="panel">
-    <small style="color:var(--cyan)">2018 – 2020</small>
-    <h3 style="margin-top:8px">Bachelor of Arts (BA)</h3>
-    <p>Allama Iqbal Open University (AIOU)</p>
-  </div>
-</div>
 </section>
 
 <section id="certifications">
-<div class="container">
-  <div class="section-heading">
-    <small>Recognition</small>
-    <h2>Certification & Achievement</h2>
-  </div>
-  <div class="cert-box">
-    <span style="font-size:30px">🏆</span>
-    <h3>NASA Space Apps Challenge</h3>
-    <p>Participation Certificate</p>
-    <p style="margin-top:12px">
-      Participated in an international hackathon, engaging in
-      collaborative problem-solving, teamwork and technology-driven innovation.
-    </p>
-  </div>
-</div>
+  <p class="num">05 — Certifications</p>
+  <h2>Certifications</h2>
+  <div class="card"><h3>NASA Space Apps Challenge – Participation Certificate</h3><p>Took part in an international hackathon, working in a team on technology-driven problem-solving and innovation.</p></div>
 </section>
 
-<section id="contact">
-<div class="container">
-  <div class="section-heading">
-    <small>Let's Connect</small>
-    <h2>Get In Touch</h2>
-    <p>Interested in AI, research, collaboration or digital innovation? Let's connect.</p>
-  </div>
-  <div class="contact-grid">
-    <a class="contact-card" href="mailto:ubi5575@gmail.com">
-      <small>EMAIL</small><p>ubi5575@gmail.com</p>
-    </a>
-    <a class="contact-card" href="https://www.linkedin.com/in/ubaid-ur-rehman-2a925b19a/" target="_blank" rel="noopener">
-      <small>LINKEDIN</small><p>Connect with me professionally ↗</p>
-    </a>
-    <a class="contact-card" href="https://github.com/ubaidurreham749" target="_blank" rel="noopener">
-      <small>GITHUB</small><p>Explore my repositories ↗</p>
-    </a>
-    <a class="contact-card" href="https://wa.me/923488549946" target="_blank" rel="noopener">
-      <small>WHATSAPP</small><p>Send me a message ↗</p>
-    </a>
-  </div>
-</div>
+<section id="education">
+  <p class="num">06 — Education</p>
+  <h2>Education</h2>
+  <div class="job"><div class="when">2018 – 2020</div><h3>Bachelor of Arts (BA)</h3><ul><li>Allama Iqbal Open University (AIOU)</li></ul></div>
 </section>
 
-<footer>
-  <div class="container">
-    <p>© 2026 <span>Ubaid Ur Rehman</span>. All Rights Reserved.</p>
-    <p>Designed with purpose · Powered by curiosity and innovation.</p>
-  </div>
-</footer>
+<section id="contact" class="contact">
+  <p class="num">07 — Contact</p>
+  <h2>Get in touch</h2>
+  <div><span>Email</span><a href="mailto:ubi5575@gmail.com">ubi5575@gmail.com</a></div>
+  <div><span>WhatsApp</span><a href="https://wa.me/923488549946">+92 348 8549946</a></div>
+  <div><span>Location</span>Sargodha, Pakistan</div>
+  <div><span>LinkedIn</span><a href="https://www.linkedin.com/in/ubaid-ur-rehman-2a925b19a" target="_blank" rel="noopener">ubaid-ur-rehman</a></div>
+  <div><span>GitHub</span><a href="https://github.com/ubaidurrehman749" target="_blank" rel="noopener">ubaidurrehman749</a></div>
+</section>
+</main>
 
-<script>
-function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("show");
-}
-document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => {
-    document.getElementById("navLinks").classList.remove("show");
-  });
-});
-</script>
-
+<footer><div class="wrap"><span>© 2026 Ubaid ur Rehman</span><span class="mono">$ status: open_to_work</span></div></footer>
 </body>
-      </html>
-      
+</html>
