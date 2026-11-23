@@ -1,395 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d1b">
+<meta name="description" content="Ubaid Ur Rehman - AI Trainer, Researcher and Digital Project Developer.">
+<title>Ubaid Ur Rehman | AI Researcher</title>
 
-    <title>Ubaid Ur Rehman | AI Research &amp; Data Analysis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <meta name="description"
-    content="Professional portfolio of Ubaid Ur Rehman, showcasing interests in AI research, data analysis, and research and problem solving.">
-
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root {
+  --bg:#080d1b;
+  --panel:#101a2d;
+  --blue:#4da3ff;
+  --cyan:#58e1ee;
+  --text:#f2f6ff;
+  --muted:#9aaac2;
+  --border:rgba(255,255,255,.09);
+}
+* {margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body {
+  font-family:Inter,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+}
+a {color:inherit;text-decoration:none}
+.container {width:min(1100px,90%);margin:auto}
+nav {
+  position:sticky;top:0;z-index:100;
+  background:rgba(8,13,27,.92);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner {
+  display:flex;justify-content:space-between;
+  align-items:center;min-height:72px;
+}
+.logo {font-size:22px;font-weight:800}
+.logo span {color:var(--blue)}
+.nav-links {display:flex;gap:23px;align-items:center}
+.nav-links a {font-size:13px;color:var(--muted)}
+.nav-links a:hover {color:var(--cyan)}
+.menu {display:none;background:none;color:white;border:0;font-size:27px}
+.hero {
+  min-height:650px;display:flex;align-items:center;
+  background:
+  radial-gradient(ellipse at 85% 30%,rgba(40,120,255,.17),transparent 40%),
+  radial-gradient(ellipse at 10% 90%,rgba(30,210,220,.09),transparent 35%);
+}
+.hero-grid {
+  display:grid;grid-template-columns:1.5fr 1fr;
+  align-items:center;gap:55px;padding:85px 0;
+}
+.tag {
+  display:inline-block;color:var(--cyan);
+  background:rgba(88,225,238,.09);
+  border:1px solid rgba(88,225,238,.2);
+  border-radius:30px;padding:7px 15px;font-size:12px;
+  margin-bottom:24px;
+}
+.hero h1 {font-size:clamp(40px,6vw,67px);line-height:1.13;letter-spacing:-2px}
+.hero h1 span {
+  background:linear-gradient(90deg,var(--blue),var(--cyan));
+  -webkit-background-clip:text;color:transparent;
+}
+.hero p {color:var(--muted);margin:22px 0;max-width:580px;font-size:15px}
+.buttons {display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}
+.btn {
+  padding:12px 22px;border-radius:8px;
+  font-size:13px;font-weight:700;display:inline-block;
+  transition:.25s;
+}
+.primary {background:linear-gradient(90deg,#2779ed,#37c9dc);color:#06101d}
+.secondary {border:1px solid var(--border);color:var(--text)}
+.btn:hover {transform:translateY(-3px)}
+.profile-wrap {display:flex;justify-content:center}
+.profile {
+  width:280px;height:280px;border-radius:50%;
+  padding:8px;border:2px solid var(--blue);
+  box-shadow:0 0 60px rgba(65,155,255,.2);
+  background:var(--panel);
+}
+.profile img {width:100%;height:100%;object-fit:cover;border-radius:50%}
+section {padding:90px 0;scroll-margin-top:70px}
+.section-heading {margin-bottom:40px}
+.section-heading small {color:var(--cyan);text-transform:uppercase;letter-spacing:3px;font-size:11px}
+.section-heading h2 {font-size:34px;margin-top:8px}
+.section-heading p {color:var(--muted);font-size:14px;margin-top:8px}
+.about-grid {display:grid;grid-template-columns:1.2fr .8fr;gap:30px}
+.panel {
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:15px;padding:27px;
+}
+.panel p {color:var(--muted);font-size:14px}
+.info-grid {display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.info {background:#142239;border-radius:10px;padding:15px}
+.info small {color:var(--muted);font-size:11px}
+.info strong {display:block;font-size:13px;margin-top:5px}
+.skills-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.skill-card,.project-card,.experience-card {
+  background:var(--panel);border:1px solid var(--border);
+  padding:23px;border-radius:13px;transition:.25s;
+}
+.skill-card:hover,.project-card:hover,.experience-card:hover {
+  transform:translateY(-5px);border-color:var(--blue);
+}
+.skill-card h3 {font-size:16px;margin-bottom:15px}
+.skill-list {display:flex;flex-wrap:wrap;gap:9px}
+.skill-list span {
+  background:#192943;color:#b9d9ff;
+  padding:7px 11px;border-radius:6px;font-size:11px;
+}
+.projects-grid {display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.project-card {display:flex;flex-direction:column;min-height:230px}
+.project-card .number {color:var(--cyan);font-size:12px}
+.project-card h3 {font-size:20px;margin:12px 0}
+.project-card p {color:var(--muted);font-size:13px;flex:1}
+.project-link {color:var(--cyan);font-size:13px;margin-top:20px;font-weight:600}
+.timeline {border-left:2px solid #285b8f;margin-left:8px;padding-left:25px}
+.experience-card {margin-bottom:20px;position:relative}
+.experience-card:before {
+  content:"";position:absolute;left:-34px;top:27px;
+  width:14px;height:14px;background:var(--cyan);border-radius:50%;
+}
+.experience-card h3 {font-size:17px}
+.experience-card small {color:var(--cyan)}
+.experience-card p {color:var(--muted);font-size:13px;margin-top:9px}
+.cert-box {
+  background:linear-gradient(120deg,#112b49,#10243a);
+  border:1px solid #24547b;padding:30px;border-radius:15px;
+}
+.cert-box h3 {font-size:21px;margin:10px 0}
+.cert-box p {color:var(--muted);font-size:14px}
+.contact-grid {display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.contact-card {
+  padding:20px;background:var(--panel);
+  border:1px solid var(--border);border-radius:12px;
+}
+.contact-card small {color:var(--cyan)}
+.contact-card p {font-size:13px;overflow-wrap:anywhere;margin-top:5px}
+footer {
+  padding:30px 0;text-align:center;
+  border-top:1px solid var(--border);
+  color:var(--muted);font-size:12px;
+}
+footer span {color:var(--cyan)}
+@media(max-width:750px) {
+  .menu {display:block}
+  .nav-links {
+    display:none;position:absolute;top:72px;left:0;width:100%;
+    background:#101a2d;padding:20px;
+    flex-direction:column;align-items:flex-start;
+  }
+  .nav-links.show {display:flex}
+  .hero-grid {grid-template-columns:1fr;text-align:center;gap:35px}
+  .hero-grid .buttons {justify-content:center}
+  .hero p {margin-left:auto;margin-right:auto}
+  .profile {width:210px;height:210px}
+  .about-grid,.skills-grid,.projects-grid,.contact-grid {grid-template-columns:1fr}
+  section {padding:65px 0}
+  .section-heading h2 {font-size:28px}
+  .info-grid {grid-template-columns:1fr 1fr}
+}
+</style>
 </head>
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
-
-    <header class="header">
-
-        <nav class="navbar">
-
-            <a href="#home" class="logo">
-                Ubaid <span>Ur Rehman</span>
-            </a>
-
-            <ul class="nav-links">
-
-                <li>
-                    <a href="#home">Home</a>
-                </li>
-
-                <li>
-                    <a href="#about">About</a>
-                </li>
-
-                <li>
-                    <a href="#education">Education</a>
-                </li>
-
-                <li>
-                    <a href="#experience">Experience</a>
-                </li>
-
-                <li>
-                    <a href="#skills">Skills</a>
-                </li>
-
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-
-            </ul>
-
-            <button class="menu-btn" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
-
-        </nav>
-
-    </header>
-
-
-    <!-- ================= HOME ================= -->
-
-    <section id="home" class="hero">
-
-        <div class="hero-content">
-
-            <p class="hello">
-                Hello, I'm
-            </p>
-
-            <h1>
-                Ubaid <span>Ur Rehman</span>
-            </h1>
-
-            <h2>
-                AI Research | Data Analysis | Research & Problem Solving
-            </h2>
-
-            <p class="hero-description">
-
-                AI trainer and researcher with a B.A. degree, focused on
-                AI research, data analysis and digital tools. I enjoy solving
-                problems through careful research and practical AI skills.
-
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#about" class="btn primary-btn">
-                    Explore My Profile
-                </a>
-
-                <a href="#contact" class="btn secondary-btn">
-                    Contact Me
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="hero-image">
-
-            <div class="image-circle">
-
-                <img src="IMG-20261010-WA0006.jpg"
-                     alt="Ubaid Ur Rehman">
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= ABOUT ================= -->
-
-    <section id="about" class="section">
-
-        <div class="section-title">
-
-            <p>
-                Get To Know Me
-            </p>
-
-            <h2>
-                About Me
-            </h2>
-
-        </div>
-
-
-        <div class="about-container">
-
-            <div class="about-text">
-
-                <p>
-                    I am an AI trainer and researcher with a B.A. degree and a
-                    strong interest in AI research and data analysis.
-                </p>
-
-                <p>
-                    My work focuses on training AI systems, researching topics
-                    in depth and using digital tools to get accurate results.
-                </p>
-
-                <p>
-                    I enjoy breaking down complex problems and finding clear,
-                    practical solutions through research.
-                </p>
-
-                <p>
-                    I am always learning and improving my skills in AI,
-                    research and problem solving.
-                </p>
-
-            </div>
-
-
-            <div class="about-cards">
-
-                <div class="info-card">
-
-                    <div class="card-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-
-                    <h3>
-                        AI Research
-                    </h3>
-
-                    <p>
-                        Hands-on research and problem solving in the field of AI.
-                    </p>
-
-                </div>
-
-                <div class="info-card">
-
-                    <div class="card-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-
-                    <h3>
-                        AI Training
-                    </h3>
-
-                    <p>
-                        Training and evaluating AI systems with quality, accurate data.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= EDUCATION ================= -->
-
-    <section id="education" class="section ux-section">
-
-        <div class="section-title">
-            <p>My Background</p>
-            <h2>Education</h2>
-        </div>
-
-        <div class="ux-grid">
-
-            <div class="ux-card">
-                <div class="ux-icon"><i class="fas fa-graduation-cap"></i></div>
-                <h3>B.A</h3>
-                <p>Bachelor of Arts degree.</p>
-            </div>
-
-            <div class="ux-card">
-                <div class="ux-icon"><i class="fas fa-robot"></i></div>
-                <h3>AI Trainer</h3>
-                <p>Training and practical learning in AI model training.</p>
-            </div>
-
-            <div class="ux-card">
-                <div class="ux-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
-                <h3>Research and AI</h3>
-                <p>Study and research focused on artificial intelligence.</p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= EXPERIENCE ================= -->
-
-    <section id="experience" class="section ux-section">
-
-        <div class="section-title">
-            <p>What I Do</p>
-            <h2>Experience</h2>
-        </div>
-
-        <div class="ux-grid">
-
-            <div class="ux-card">
-                <div class="ux-icon"><i class="fas fa-robot"></i></div>
-                <h3>AI Trainer</h3>
-                <p>
-                    Training and improving AI systems by reviewing, rating and
-                    creating high-quality data.
-                </p>
-            </div>
-
-            <div class="ux-card">
-                <div class="ux-icon"><i class="fas fa-brain"></i></div>
-                <h3>Research &amp; Analysis</h3>
-                <p>
-                    Researching topics in depth, analysing information and
-                    turning it into clear, useful results.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= SKILLS ================= -->
-
-    <section id="skills" class="section ux-section">
-
-        <div class="section-title">
-            <p>What I Know</p>
-            <h2>Skills</h2>
-        </div>
-
-        <div class="ux-tags">
-            <span class="ux-tag"><i class="fas fa-brain"></i> AI Research</span>
-            <span class="ux-tag"><i class="fas fa-robot"></i> AI Training</span>
-            <span class="ux-tag"><i class="fas fa-lightbulb"></i> Research and Problem Solving</span>
-            <span class="ux-tag"><i class="fas fa-laptop-code"></i> Digital Tools</span>
-        </div>
-
-    </section>
-
-
-    <!-- ================= CONTACT ================= -->
-
-    <section id="contact" class="section ux-section">
-
-        <div class="section-title">
-            <p>Get In Touch</p>
-            <h2>Contact</h2>
-        </div>
-
-        <div class="ux-tags">
-            <!-- YAHAN APNI EMAIL LIKHO -->
-            <a class="ux-tag" href="mailto: ubi5575@gmail.com">
-                <i class="fas fa-envelope"></i>ubi5575@gmail.com
-            </a>
-            <a class="ux-tag" href="https://github.com/ubaidurrehman749" target="_blank" rel="noopener">
-                <i class="fab fa-github"></i> GitHub
-            </a>            <a class="ux-tag" href="tel:+923488549946">
-                <i class="fas fa-phone"></i> +92 348 8549946
-            </a>
-            <a class="ux-tag" href="https://www.linkedin.com/in/ubaid-ur-rehman-2a925b19a" target="_blank" rel="noopener">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-        </div>
-
-    </section>
-
-
-    <footer class="ux-footer">
-        &copy; 2026 Ubaid Ur Rehman. All rights reserved.
-    </footer>
-
-
-    <style>
-        .ux-section { text-align: center; }
-        .ux-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .ux-card {
-            background: #fff;
-            border-radius: 16px;
-            padding: 28px 22px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
-            text-align: center;
-        }
-        .ux-icon {
-            width: 56px; height: 56px; margin: 0 auto 14px;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            background: #e8f5e9; color: #2e7d32; font-size: 22px;
-        }
-        .ux-card h3 { color: #0f2a4a; margin-bottom: 8px; }
-        .ux-card p { color: #4a5568; line-height: 1.6; font-size: 15px; }
-        .ux-tags {
-            display: flex; flex-wrap: wrap; justify-content: center;
-            gap: 14px; max-width: 800px; margin: 0 auto;
-        }
-        .ux-tag {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 12px 22px; border-radius: 50px;
-            background: #e8f5e9; color: #2e7d32;
-            font-weight: 600; font-size: 15px; text-decoration: none;
-        }
-        .ux-tag:hover { background: #2e7d32; color: #fff; }
-        .ux-footer {
-            text-align: center; padding: 24px 16px;
-            color: #4a5568; font-size: 14px;
-        }
-    </style>
-
-
-    <script>
-        function toggleMenu() {
-            var links = document.querySelector(".nav-links");
-            if (links) {
-                links.classList.toggle("active");
-                links.classList.toggle("show");
-            }
-        }
-
-        document.querySelectorAll(".nav-links a").forEach(function (a) {
-            a.addEventListener("click", function () {
-                var links = document.querySelector(".nav-links");
-                if (links) {
-                    links.classList.remove("active");
-                    links.classList.remove("show");
-                }
-            });
-        });
-    </script>
+<nav>
+<div class="container nav-inner">
+  <a class="logo" href="#home">UBAID<span>.</span></a>
+  <button class="menu" onclick="toggleMenu()" aria-label="Toggle navigation">☰</button>
+  <div class="nav-links" id="navLinks">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+</nav>
+
+<header class="hero" id="home">
+<div class="container hero-grid">
+  <div>
+    <span class="tag">AI TRAINER · RESEARCHER · PROJECT DEVELOPER</span>
+    <h1>Hi, I'm <span>Ubaid Ur Rehman</span></h1>
+    <p>
+      I explore Artificial Intelligence, research, data analysis
+      and digital innovation. I enjoy solving problems, evaluating
+      information and developing practical AI-powered applications.
+    </p>
+    <div class="buttons">
+      <a href="#projects" class="btn primary">Explore My Projects ↗</a>
+      <a href="#contact" class="btn secondary">Contact Me</a>
+    </div>
+  </div>
+  <div class="profile-wrap">
+    <div class="profile">
+      <img src="IMG-20261010-WA0006.jpg" alt="Ubaid Ur Rehman">
+    </div>
+  </div>
+</div>
+</header>
+
+<section id="about">
+<div class="container">
+  <div class="section-heading">
+    <small>Discover My Journey</small>
+    <h2>About Me</h2>
+    <p>A little introduction about my professional background.</p>
+  </div>
+  <div class="about-grid">
+    <div class="panel">
+      <h3 style="margin-bottom:15px">Who I Am</h3>
+      <p>
+        I am Ubaid Ur Rehman, an AI-focused professional with a
+        Bachelor of Arts degree. My interests include AI training,
+        prompt engineering, AI response evaluation, research,
+        data analysis and problem-solving.
+        <br><br>
+        I also explore digital product development and build
+        web-based applications using modern AI tools and platforms.
+        I value critical thinking, accuracy, continuous learning
+        and practical innovation.
+      </p>
+    </div>
+    <div class="info-grid">
+      <div class="info"><small>Education</small><strong>Bachelor of Arts</strong></div>
+      <div class="info"><small>Specialization</small><strong>AI & Research</strong></div>
+      <div class="info"><small>Location</small><strong>Pakistan</strong></div>
+      <div class="info"><small>Focus</small><strong>Digital Innovation</strong></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="skills">
+<div class="container">
+  <div class="section-heading">
+    <small>My Capabilities</small>
+    <h2>Skills & Expertise</h2>
+    <p>Skills developed through professional experience and projects.</p>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h3>Artificial Intelligence</h3>
+      <div class="skill-list">
+        <span>AI Tools</span><span>AI Training</span>
+        <span>Prompt Engineering</span><span>Response Evaluation</span>
+        <span>Information Verification</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <h3>Research & Analysis</h3>
+      <div class="skill-list">
+        <span>AI Research</span><span>Data Analysis</span>
+        <span>Critical Thinking</span><span>Logical Reasoning</span>
+        <span>Problem Solving</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <h3>Professional Skills</h3>
+      <div class="skill-list">
+        <span>Leadership</span><span>Communication</span>
+        <span>Teamwork</span><span>Quality Checking</span>
+        <span>Data Management</span><span>Microsoft Office</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="projects">
+<div class="container">
+  <div class="section-heading">
+    <small>What I've Built</small>
+    <h2>Featured Projects</h2>
+    <p>Digital applications and technology projects.</p>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <span class="number">01 / WEB PROJECT</span>
+      <h3>UA Veylora</h3>
+      <p>A web-based digital project developed through collaborative technology and innovation.</p>
+      <a class="project-link" href="https://ua-veylora.vercel.app/" target="_blank" rel="noopener">View Live Project ↗</a>
+    </div>
+    <div class="project-card">
+      <span class="number">02 / ARTIFICIAL INTELLIGENCE</span>
+      <h3>AI Tutor Live</h3>
+      <p>An AI-powered tutoring application designed to support interactive learning and educational assistance.</p>
+      <a class="project-link" href="https://ai-tutor-live-mqlzvbuwck36zasjrcbcvb.streamlit.app/" target="_blank" rel="noopener">View Live Project ↗</a>
+    </div>
+    <div class="project-card">
+      <span class="number">03 / GAME DEVELOPMENT</span>
+      <h3>Snake Xenzia Pro</h3>
+      <p>An interactive digital game application inspired by the classic Snake gaming experience.</p>
+      <a class="project-link" href="https://snake-xenzia-pro-cc8m4cphsukdcvuw6hiqkw.streamlit.app/" target="_blank" rel="noopener">View Live Project ↗</a>
+    </div>
+    <div class="project-card">
+      <span class="number">04 / HEALTHCARE AI</span>
+      <h3>MediMind AI</h3>
+      <p>An AI-based healthcare assistance application designed to provide health-related informational support.</p>
+      <a class="project-link" href="https://medimind-n2anzlmyvkzkz7sv7fqjnw.streamlit.app/" target="_blank" rel="noopener">View Live Project ↗</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="experience">
+<div class="container">
+  <div class="section-heading">
+    <small>Professional Background</small>
+    <h2>Work Experience</h2>
+    <p>My professional journey and responsibilities.</p>
+  </div>
+  <div class="timeline">
+    <div class="experience-card">
+      <small>2021 – 2023</small>
+      <h3>AI Trainer & Prompt Engineer</h3>
+      <p>Worked with AI tools, developed and refined prompts, evaluated AI-generated responses and identified inaccurate or misleading information.</p>
+    </div>
+    <div class="experience-card">
+      <small>2019 – 2020</small>
+      <h3>Clerk – Angels Institute of Science and Technology for Girls</h3>
+      <p>Maintained student records, handled data entry, managed administrative documents and supported institutional operations.</p>
+    </div>
+    <div class="experience-card">
+      <small>2017 – 2018</small>
+      <h3>Restaurant Manager – Butt Karahi</h3>
+      <p>Managed daily operations, staff responsibilities, customer service, inventory and service quality.</p>
+    </div>
+    <div class="experience-card">
+      <small>2015 – 2017</small>
+      <h3>Quality Checker – Service Company</h3>
+      <p>Inspected work quality, identified errors, maintained quality records and reported inconsistencies.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="education">
+<div class="container">
+  <div class="section-heading">
+    <small>Academic Background</small>
+    <h2>Education</h2>
+  </div>
+  <div class="panel">
+    <small style="color:var(--cyan)">2018 – 2020</small>
+    <h3 style="margin-top:8px">Bachelor of Arts (BA)</h3>
+    <p>Allama Iqbal Open University (AIOU)</p>
+  </div>
+</div>
+</section>
+
+<section id="certifications">
+<div class="container">
+  <div class="section-heading">
+    <small>Recognition</small>
+    <h2>Certification & Achievement</h2>
+  </div>
+  <div class="cert-box">
+    <span style="font-size:30px">🏆</span>
+    <h3>NASA Space Apps Challenge</h3>
+    <p>Participation Certificate</p>
+    <p style="margin-top:12px">
+      Participated in an international hackathon, engaging in
+      collaborative problem-solving, teamwork and technology-driven innovation.
+    </p>
+  </div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+  <div class="section-heading">
+    <small>Let's Connect</small>
+    <h2>Get In Touch</h2>
+    <p>Interested in AI, research, collaboration or digital innovation? Let's connect.</p>
+  </div>
+  <div class="contact-grid">
+    <a class="contact-card" href="mailto:ubi5575@gmail.com">
+      <small>EMAIL</small><p>ubi5575@gmail.com</p>
+    </a>
+    <a class="contact-card" href="https://www.linkedin.com/in/ubaid-ur-rehman-2a925b19a/" target="_blank" rel="noopener">
+      <small>LINKEDIN</small><p>Connect with me professionally ↗</p>
+    </a>
+    <a class="contact-card" href="https://github.com/ubaidurreham749" target="_blank" rel="noopener">
+      <small>GITHUB</small><p>Explore my repositories ↗</p>
+    </a>
+    <a class="contact-card" href="https://wa.me/923488549946" target="_blank" rel="noopener">
+      <small>WHATSAPP</small><p>Send me a message ↗</p>
+    </a>
+  </div>
+</div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 <span>Ubaid Ur Rehman</span>. All Rights Reserved.</p>
+    <p>Designed with purpose · Powered by curiosity and innovation.</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("show");
+}
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("navLinks").classList.remove("show");
+  });
+});
+</script>
 
 </body>
-            </html>
+      </html>
+      
